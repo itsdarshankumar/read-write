@@ -126,4 +126,5 @@ writer() {
 ### 
 In this approach, readers and writers use separate mutexes to control access to the shared resource. When a reader arrives, it first checks to see if there are any active writers. If not, it increments the number of waiting readers and waits until there are no active writers. Once there are no active writers, it increments the number of active readers and reads the data. When finished, it decrements the number of active readers and signals any waiting writers if there are no more active readers.
 
-###When a writer arrives, it first waits until there are no active readers or writers. Once there are no active readers or writers, it increments the number of active writers and writes the data. When finished, it decrements the number of active writers and signals any waiting readers or writers.
+###
+When a writer arrives, it first waits until there are no active readers or writers. Once there are no active readers or writers, it increments the number of active writers and writes the data. When finished, it decrements the number of active writers and signals any waiting readers or writers.
